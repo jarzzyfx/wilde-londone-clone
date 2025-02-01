@@ -1,0 +1,65 @@
+export const wildeDestinations = [
+  {
+    path: "",
+    text: "berlin",
+  },
+  {
+    path: "",
+    text: "edingburgh",
+  },
+  {
+    path: "",
+    text: "london",
+  },
+  {
+    path: "",
+    text: "manchester",
+  },
+];
+export const aboutWildeLinks = [
+  {
+    path: "",
+    text: "Contact us",
+  },
+  {
+    path: "",
+    text: "Career",
+  },
+  {
+    path: "",
+    text: "Terms & Conditions",
+  },
+];
+export const aboutWildeEndLinks = [
+  {
+    path: "",
+    text: "FAQ",
+  },
+  {
+    path: "",
+    text: "Blog",
+  },
+  {
+    path: "",
+    text: "Sign up and save",
+  },
+];
+
+export const searchItems = [
+  {
+    title: "city",
+    description: "london",
+  },
+  {
+    title: "aparthotel",
+    description: "all aparthotels",
+  },
+  {
+    title: "date",
+    description: "check in - check out",
+  },
+  {
+    title: "guest",
+    description: "1 guest, 1 apartment ",
+  },
+];
