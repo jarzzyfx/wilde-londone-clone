@@ -14,6 +14,7 @@ export default {
         primaryBg: "#ebe0ce",
         secondaryBg: "#f3ece2",
         foreground: "hsl(var(--foreground))",
+        mapBg: "rgba(196, 104, 60, .7)",
         backdropBG: "rgba(39, 63, 43, .7)",
         card: {
           DEFAULT: "hsl(var(--card))",

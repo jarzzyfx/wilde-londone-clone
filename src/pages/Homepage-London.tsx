@@ -1,5 +1,6 @@
 import Apartments from "@/components/Homepage/Apartments";
 import Hero from "@/components/Homepage/Hero";
+import Maps from "@/components/Homepage/Maps";
 import SubHero from "@/components/Homepage/SubHero";
 
 const HomepageLondon = () => {
@@ -8,6 +9,7 @@ const HomepageLondon = () => {
       <Hero />
       <SubHero />
       <Apartments />
+      <Maps />
     </section>
   );
 };
