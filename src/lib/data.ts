@@ -11,6 +11,13 @@ const Reception = "/reception.svg";
 const Restaurant = "/restaurant.svg";
 const Wifi = "/wifi.svg";
 
+// favourite images
+const FaveOne = "/images/fave-1.webp";
+const FaveTwo = "/images/fave-2.webp";
+const FaveThree = "/images/fave-3.webp";
+const FaveFour = "/images/fave-4.webp";
+const FaveFive = "/images/fave-5.webp";
+
 export const wildeApartments = [
   {
     title: "Wilde Aparthotels, London, Liverpool Street",
@@ -214,5 +221,31 @@ export const wildeApartments = [
         source: Lift,
       },
     ],
+  },
+];
+
+export const favorites = [
+  {
+    img: FaveOne,
+    text: "Discovering London’s Liverpool Street",
+  },
+  {
+    img: FaveTwo,
+    text: `Family Friendly Liverpool Street
+`,
+  },
+  {
+    img: FaveThree,
+    text: `Taste of London: A Deep Dive into the City’s Multicultural Cuisine 
+
+`,
+  },
+  {
+    img: FaveFour,
+    text: "Wilde London: The Alternative London Guide",
+  },
+  {
+    img: FaveFive,
+    text: "Wilde London: Top Things To Do",
   },
 ];
