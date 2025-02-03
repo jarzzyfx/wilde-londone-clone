@@ -48,7 +48,7 @@ const Header = () => {
           color: "black",
           duration: 0.5,
         });
-        gsap.to(".align-justify", { color: "secondaryBg", duration: 0.5 });
+        gsap.to(".align-justify", { color: "#ebe0ce", duration: 0.5 });
       }
     };
 
@@ -61,7 +61,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="header w-full h-[80px] z-50 flex items-center flex-col fixed top-0 left-0">
+      <header className="header w-full h-[80px] z-40 flex items-center flex-col fixed top-0 left-0">
         <SnackBar />
         <div
           id="header-container "

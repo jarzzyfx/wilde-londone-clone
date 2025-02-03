@@ -55,7 +55,7 @@ const Apartments = () => {
               <div className="w-[150%] h-[321.68px] bg-red-500 rounded-l-md overflow-hidden relative">
                 <Image src={`/${apartment.media[0].source}`} alt="img" fill />
                 {apartment.isMediaPlayable && (
-                  <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-40">
+                  <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-30">
                     <Image
                       src={"/play.svg"}
                       alt={"play"}
@@ -66,7 +66,7 @@ const Apartments = () => {
                 )}
                 <div
                   id="overlay"
-                  className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                  className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
                 />
               </div>
               <div className="grid grid-rows-2 w-full h-[321.68px] gap-1">
@@ -79,7 +79,7 @@ const Apartments = () => {
                   />
                   <div
                     id="overlay"
-                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
                   />
                 </div>
                 <div className="w-full h-[160.84px] bg-slate-500 rounded-br-md overflow-hidden relative">
@@ -91,9 +91,9 @@ const Apartments = () => {
                   />
                   <div
                     id="overlay"
-                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
                   />
-                  <Button className="absolute bottom-[10%] right-[5%] z-40 bg-[#3e6545] bg-opacity-50 text-white rounded-full text-lg">
+                  <Button className="absolute bottom-[10%] right-[5%] z-30 bg-[#3e6545] bg-opacity-50 text-white rounded-full text-lg">
                     View all photos ( {apartment.MediaCount} )
                   </Button>
                 </div>
