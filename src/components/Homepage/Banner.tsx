@@ -6,7 +6,7 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <main className="w-full bg-secondaryBg">
-      <Container className="flex py-32 justify-between gap-10 md:px-[150px]">
+      <Container className="grid py-32 grid-cols-2 md:grid-cols-4 gap-10 md:px-[150px]">
         {bannerData.map((dt, index) => (
           <div
             className="h-[176.8px] flex flex-col items-center justify-between"

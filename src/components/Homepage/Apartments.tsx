@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Container from "../shared/Container";
 import Link from "next/link";
@@ -5,6 +7,14 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
 import { wildeApartments } from "@/lib/data";
+
+// Import Swiper styles and components
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import { Navigation, Pagination } from 'swiper';
 
 const Apartments = () => {
   return (
@@ -26,7 +36,6 @@ const Apartments = () => {
                   {apartment.title}
                 </h4>
               </Link>
-
               <Link
                 className="text-[1.125rem] leading-[1.6875rem] space-x-[ .01125em] flex items-center"
                 href={""}
@@ -48,60 +57,88 @@ const Apartments = () => {
                 </span>
               </Link>
             </header>
-            <div
-              id={"apartment gallery"}
-              className="flex w-full justify-items-center gap-3"
-            >
-              <div className="w-[150%] h-[321.68px] bg-red-500 rounded-l-md overflow-hidden relative">
-                <Image src={`/${apartment.media[0].source}`} alt="img" fill />
-                {apartment.isMediaPlayable && (
-                  <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-30">
-                    <Image
-                      src={"/play.svg"}
-                      alt={"play"}
-                      width={38}
-                      height={42}
-                    />
-                  </Button>
-                )}
-                <div
-                  id="overlay"
-                  className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
-                />
+
+            {/* Gallery - Slider on mobile */}
+            <div id={"apartment-gallery"} className="flex flex-wrap gap-3">
+              {/* Swiper for mobile */}
+              <div className="block sm:hidden w-full">
+                <Swiper navigation slidesPerView={1} spaceBetween={10} loop>
+                  {apartment.media.map((media, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="w-full h-[300px] bg-gray-300 relative">
+                        <Image
+                          src={`/${media.source}`}
+                          alt="Gallery Image"
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                        {apartment.isMediaPlayable && (
+                          <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-30">
+                            <Image
+                              src={"/play.svg"}
+                              alt={"play"}
+                              width={38}
+                              height={42}
+                            />
+                          </Button>
+                        )}
+                        <div className="cursor-pointer absolute w-full h-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20" />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
-              <div className="grid grid-rows-2 w-full h-[321.68px] gap-1">
-                <div className="w-full h-[160.84px] bg-blue-500 rounded-tr-md overflow-hidden relative">
+
+              {/* Desktop View */}
+              <div className="hidden sm:grid grid-cols-2 gap-3 w-full">
+                <div className="w-full h-[321.68px] bg-red-500 rounded-l-md overflow-hidden relative">
                   <Image
-                    className="object-cover"
-                    src={`/${apartment.media[1].source}`}
+                    src={`/${apartment.media[0].source}`}
                     alt="img"
-                    fill
+                    layout="fill"
+                    objectFit="cover"
                   />
-                  <div
-                    id="overlay"
-                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
-                  />
+                  {apartment.isMediaPlayable && (
+                    <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-30">
+                      <Image
+                        src={"/play.svg"}
+                        alt={"play"}
+                        width={38}
+                        height={42}
+                      />
+                    </Button>
+                  )}
+                  <div className="cursor-pointer absolute w-full h-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20" />
                 </div>
-                <div className="w-full h-[160.84px] bg-slate-500 rounded-br-md overflow-hidden relative">
-                  <Image
-                    src={`/${apartment.media[2].source}`}
-                    className="object-cover"
-                    alt="img"
-                    fill
-                  />
-                  <div
-                    id="overlay"
-                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20"
-                  />
-                  <Button className="absolute bottom-[10%] right-[5%] z-30 bg-[#3e6545] bg-opacity-50 text-white rounded-full text-lg">
-                    View all photos ( {apartment.MediaCount} )
-                  </Button>
+                <div className="grid grid-rows-2 gap-[2px] w-full">
+                  <div className="w-full h-[160.84px] bg-blue-500 rounded-tr-md overflow-hidden relative">
+                    <Image
+                      className="object-cover"
+                      src={`/${apartment.media[1].source}`}
+                      alt="img"
+                      layout="fill"
+                    />
+                    <div className="cursor-pointer absolute w-full h-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20" />
+                  </div>
+                  <div className="w-full h-[160.84px] bg-slate-500 rounded-br-md overflow-hidden relative">
+                    <Image
+                      src={`/${apartment.media[2].source}`}
+                      className="object-cover"
+                      alt="img"
+                      layout="fill"
+                    />
+                    <div className="cursor-pointer absolute w-full h-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-20" />
+                    <Button className="absolute bottom-[10%] right-[5%] z-30 bg-[#3e6545] bg-opacity-50 text-white rounded-full text-lg">
+                      View all photos ( {apartment.MediaCount} )
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
+
             <div
               id="apartment-outline"
-              className="w-full my-10 flex justify-between"
+              className="w-full my-10 flex flex-col gap-5 md:gap-0 md:flex-row md:justify-between"
             >
               <ul id="outlines" className="flex flex-col gap-4">
                 {apartment.outline.map((outline) => (
@@ -113,7 +150,6 @@ const Apartments = () => {
                       width={11}
                       height={19}
                     />{" "}
-                    {/* replace with the actual image*/}
                     <p className="text-[1.25rem] leading-[2rem] space-x-[.0125em]">
                       {outline}
                     </p>
@@ -125,7 +161,8 @@ const Apartments = () => {
                 view aparthotel
               </Button>
             </div>
-            <div className="" id="apartment-amenities">
+
+            <div id="apartment-amenities">
               <h2 className="text-[1.75rem] leading-[1.8375rem] italic font-mediaanIt font-thin mb-8 ">
                 Amenities
               </h2>
@@ -134,7 +171,6 @@ const Apartments = () => {
                 id="amenities-list"
                 className="flex flex-wrap items-center gap-8 justify-between"
               >
-                {/* amenities */}
                 {apartment.amenities.map((amenity) => (
                   <div
                     key={amenity.text}

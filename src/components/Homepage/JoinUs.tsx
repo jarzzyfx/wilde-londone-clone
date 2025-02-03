@@ -49,7 +49,10 @@ const JoinUs = () => {
             </header>
             <CarouselContent>
               {JoinUsData.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={index}
+                  className="ml-[100px] md:ml-0 basis-1/2 lg:basis-1/3"
+                >
                   <div className="flex flex-col gap-4 items-center">
                     <h3
                       id="small-title"
