@@ -33,6 +33,8 @@ const Rest = "/rest.svg";
 
 export const wildeApartments = [
   {
+    MediaCount: 62,
+    isMediaPlayable: true,
     title: "Wilde Aparthotels, London, Liverpool Street",
     rating: 4.5,
     reviews: {
@@ -46,13 +48,13 @@ export const wildeApartments = [
     ],
     media: [
       {
-        source: "",
+        source: "images/apart1-1.webp",
       },
       {
-        source: "",
+        source: "images/apart1-2.webp",
       },
       {
-        source: "",
+        source: "images/apart1-3.webp",
       },
     ],
     amenities: [
@@ -84,6 +86,8 @@ export const wildeApartments = [
     numberOfMedia: 9,
   },
   {
+    MediaCount: 40,
+    isMediaPlayable: true,
     title: "Wilde Aparthotels, London, Paddington",
     rating: 4.9,
     reviews: {
@@ -97,13 +101,13 @@ export const wildeApartments = [
     ],
     media: [
       {
-        source: "",
+        source: "images/apart2-1.webp",
       },
       {
-        source: "",
+        source: "images/apart2-2.webp",
       },
       {
-        source: "",
+        source: "images/apart2-3.webp",
       },
     ],
     amenities: [
@@ -135,6 +139,8 @@ export const wildeApartments = [
     numberOfMedia: 7,
   },
   {
+    MediaCount: 35,
+    isMediaPlayable: true,
     title: "Wilde Aparthotels, London, Aldgate Tower Bridge",
     rating: 4.8,
     reviews: {
@@ -148,13 +154,13 @@ export const wildeApartments = [
     ],
     media: [
       {
-        source: "",
+        source: "images/apart1-1.webp",
       },
       {
-        source: "",
+        source: "images/apart3-2.webp",
       },
       {
-        source: "",
+        source: "images/apart3-3.webp",
       },
     ],
     amenities: [
@@ -186,6 +192,8 @@ export const wildeApartments = [
     numberOfMedia: 9,
   },
   {
+    MediaCount: 32,
+    isMediaPlayable: false,
     title: "Wilde Aparthotels, London, Covent Garden",
     rating: 4.9,
     reviews: {
@@ -199,13 +207,13 @@ export const wildeApartments = [
     ],
     media: [
       {
-        source: "",
+        source: "images/apart4-1.webp",
       },
       {
-        source: "",
+        source: "images/apart4-2.webp",
       },
       {
-        source: "",
+        source: "images/apart4-3.webp",
       },
     ],
     amenities: [

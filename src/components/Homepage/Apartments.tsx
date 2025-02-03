@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../shared/Container";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
@@ -53,10 +52,51 @@ const Apartments = () => {
               id={"apartment gallery"}
               className="flex w-full justify-items-center gap-3"
             >
-              <div className="w-[150%] h-[321.68px] bg-red-500 rounded-l-md overflow-hidden"></div>
+              <div className="w-[150%] h-[321.68px] bg-red-500 rounded-l-md overflow-hidden relative">
+                <Image src={`/${apartment.media[0].source}`} alt="img" fill />
+                {apartment.isMediaPlayable && (
+                  <Button className="w-[150px] h-[150px] opacity-25 hover:opacity-100 absolute top-1/3 left-1/3 rounded-full z-40">
+                    <Image
+                      src={"/play.svg"}
+                      alt={"play"}
+                      width={38}
+                      height={42}
+                    />
+                  </Button>
+                )}
+                <div
+                  id="overlay"
+                  className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                />
+              </div>
               <div className="grid grid-rows-2 w-full h-[321.68px] gap-1">
-                <div className="w-full h-[160.84px] bg-blue-500 rounded-tr-md overflow-hidden"></div>
-                <div className="w-full h-[160.84px] bg-slate-500 rounded-br-md overflow-hidden"></div>
+                <div className="w-full h-[160.84px] bg-blue-500 rounded-tr-md overflow-hidden relative">
+                  <Image
+                    className="object-cover"
+                    src={`/${apartment.media[1].source}`}
+                    alt="img"
+                    fill
+                  />
+                  <div
+                    id="overlay"
+                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                  />
+                </div>
+                <div className="w-full h-[160.84px] bg-slate-500 rounded-br-md overflow-hidden relative">
+                  <Image
+                    src={`/${apartment.media[2].source}`}
+                    className="object-cover"
+                    alt="img"
+                    fill
+                  />
+                  <div
+                    id="overlay"
+                    className="cursor-pointer absolute w-full f-full top-0 left-0 bg-black bg-opacity-0 hover:bg-opacity-20 z-30"
+                  />
+                  <Button className="absolute bottom-[10%] right-[5%] z-40 bg-[#3e6545] bg-opacity-50 text-white rounded-full text-lg">
+                    View all photos ( {apartment.MediaCount} )
+                  </Button>
+                </div>
               </div>
             </div>
             <div
@@ -66,8 +106,10 @@ const Apartments = () => {
               <ul id="outlines" className="flex flex-col gap-4">
                 {apartment.outline.map((outline) => (
                   <span key={outline} className="flex items-center gap-2 ">
-                    <ChevronRight
-                      className="w-10 h-10 text-backdropBG"
+                    <Image
+                      src={"/right.svg"}
+                      alt="right"
+                      className=" text-backdropBG"
                       width={11}
                       height={19}
                     />{" "}
