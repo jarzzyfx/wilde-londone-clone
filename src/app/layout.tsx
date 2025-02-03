@@ -10,7 +10,7 @@ const mediaanRegular = localFont({
 });
 
 const mediaanItalic = localFont({
-  src: "./fonts/Mediaan-italic.woff",
+  src: "./fonts/Mediaan-Italic.woff",
   variable: "--mediaan-it",
 });
 
