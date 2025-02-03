@@ -135,7 +135,7 @@ const Header = () => {
                   </SheetHeader>
 
                   <section
-                    className="w-full min-h-[400px] mt-14 flex justify-between"
+                    className="w-full min-h-[400px] mt-14 flex flex-col md:flex-row justify-between"
                     id="navBody"
                   >
                     <div className="w-full h-full border-r-[1px] border-black border-opacity-15">
@@ -166,9 +166,8 @@ const Header = () => {
                         Can&apos;t find your location ?
                       </h6>
 
-                      <p className="text-[1.125rem] leading-[ 1.575rem] space-x-[.0169em]">
-                        {" "}
-                        Explore the locations of our sister brand, Stycity
+                      <p className="text-[1.125rem] leading-[1.575rem] space-x-[.0169em]">
+                        Explore the locations of our sister brand, Staycity
                         Aparthotels.{" "}
                         <Link
                           href={
@@ -180,17 +179,17 @@ const Header = () => {
                         </Link>
                       </p>
                     </div>
-                    <section className="w-full h-full pl-20 ">
+                    <section className="w-full h-full pl-0 md:pl-20">
                       <div className="flex flex-col gap-4">
                         <Link
                           href={""}
-                          className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[ .007em]"
+                          className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[.007em]"
                         >
                           Manage my booking
                         </Link>
                         <Link
                           href={""}
-                          className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[ .007em]"
+                          className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[.007em]"
                         >
                           Online Check-in
                         </Link>
@@ -208,7 +207,7 @@ const Header = () => {
                             <Link
                               key={link.text}
                               href={link.path}
-                              className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[ .007em]"
+                              className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[.007em]"
                             >
                               {link.text}
                             </Link>
@@ -223,7 +222,7 @@ const Header = () => {
                           <Link
                             key={link.text}
                             href={link.path}
-                            className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[ .007em]"
+                            className="hover:text-backdropBG hover:underline text-[1.375rem] leading-[1.71875rem] space-x-[.007em]"
                           >
                             {link.text}
                           </Link>
