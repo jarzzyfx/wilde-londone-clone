@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import ChatProvider from "@/components/shared/Chat";
+import Footer from "@/components/shared/Footer";
 
 const mediaanRegular = localFont({
   src: "./fonts/Mediaan-Regular.woff",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ChatProvider>
           <Header />
           {children}
+          <Footer />
         </ChatProvider>
       </body>
     </html>

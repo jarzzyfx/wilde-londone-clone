@@ -3,6 +3,9 @@ import Hero from "@/components/Homepage/Hero";
 import Maps from "@/components/Homepage/Maps";
 import Explore from "@/components/Homepage/Explore";
 import SubHero from "@/components/Homepage/SubHero";
+import JoinUs from "@/components/Homepage/JoinUs";
+import SisterBrand from "@/components/Homepage/SisterBrand";
+import Banner from "@/components/Homepage/Banner";
 
 const HomepageLondon = () => {
   return (
@@ -12,6 +15,9 @@ const HomepageLondon = () => {
       <Apartments />
       <Maps />
       <Explore />
+      <JoinUs />
+      <SisterBrand />
+      <Banner />
     </section>
   );
 };

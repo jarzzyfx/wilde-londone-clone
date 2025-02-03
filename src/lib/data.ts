@@ -18,6 +18,19 @@ const FaveThree = "/images/fave-3.webp";
 const FaveFour = "/images/fave-4.webp";
 const FaveFive = "/images/fave-5.webp";
 
+// join data
+
+const JoinOne = "/images/join-1.png";
+const JoinTwo = "/images/join-2.png";
+const JoinThree = "/images/join-3.png";
+const JoinFour = "/images/join-4.png";
+
+// banner
+const Cup = "/cup.svg";
+const Flexible = "/flexible.svg";
+const Service = "/service.svg";
+const Rest = "/rest.svg";
+
 export const wildeApartments = [
   {
     title: "Wilde Aparthotels, London, Liverpool Street",
@@ -247,5 +260,64 @@ export const favorites = [
   {
     img: FaveFive,
     text: "Wilde London: Top Things To Do",
+  },
+];
+
+export const JoinUsData = [
+  {
+    smallTitle: "Membership benefits",
+    largeTitle: "10% off Every Stay",
+    image: JoinOne,
+    description: "Save on your next stay, and all after that.",
+    buttonText: "Sign up and save",
+    start: true,
+  },
+  {
+    smallTitle: "Changed your mind?",
+    largeTitle: "Free Cancellation",
+    image: JoinTwo,
+    description: "Until 3pm the day before you arrive.",
+    buttonText: "Start your booking now",
+    start: false,
+  },
+  {
+    smallTitle: "Early saver",
+    largeTitle: "Up to 30% off 3+ Nights ",
+    image: JoinThree,
+    description:
+      "Book 30+ days in advance to save up to 30% off your stays. T&Cs apply.",
+    buttonText: "Book your next trip",
+    start: false,
+  },
+  {
+    smallTitle: "Get comfy ",
+    largeTitle: "Stay Longer for Less",
+    image: JoinFour,
+    description: "Save up to 30% when you stay with us long term.",
+    buttonText: "Explore",
+    start: false,
+  },
+];
+
+export const bannerData = [
+  {
+    img: Cup,
+    title: "How wonderful",
+    description: "We delight our members with 10% off all stays",
+  },
+  {
+    img: Flexible,
+    title: "Forever flexible",
+    description: "Enjoy flexible booking and free cancellation options",
+  },
+  {
+    img: Service,
+    title: "At your service",
+    description: "Our reception team are on hand to make your wish a reality",
+  },
+  {
+    img: Rest,
+    title: "Stay longer",
+    description: "Relish 20% off stays over 7 nights",
   },
 ];

@@ -63,3 +63,30 @@ export const searchItems = [
     description: "1 guest, 1 apartment ",
   },
 ];
+
+export const footerLinks = [
+  {
+    title: "service",
+    links: ["Contact us", "FAQ", "Dog Friendly Stays"],
+  },
+  {
+    title: "Our Company",
+    links: [
+      "About",
+      "Sustainability",
+      "Press & Media",
+      "Careers",
+      "Board of Directors",
+      "Development",
+    ],
+  },
+  {
+    title: "Partner services",
+    links: [
+      "Car hire",
+      "Airport transfer",
+      "Events & Activities",
+      "Upgrade Your Stay",
+    ],
+  },
+];
