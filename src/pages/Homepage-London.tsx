@@ -9,7 +9,7 @@ import Banner from "@/components/Homepage/Banner";
 
 const HomepageLondon = () => {
   return (
-    <section className=" bg-primaryBg">
+    <section className=" bg-primaryBg overflow-hidden">
       <Hero />
       <SubHero />
       <Apartments />
