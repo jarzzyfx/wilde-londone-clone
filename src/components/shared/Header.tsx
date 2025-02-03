@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../ui/button";
 import {
   Sheet,
@@ -23,11 +25,43 @@ import {
 import { Separator } from "../ui/separator";
 import Image from "next/image";
 import SnackBar from "./SnackBar";
+import { gsap } from "gsap";
 
 const Header = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const triggerPosition = window.innerHeight * 0.2;
+
+      if (scrollPosition > triggerPosition) {
+        gsap.to(".header", { backgroundColor: "#ebe0ce", duration: 0.5 });
+        gsap.to(".login-button", {
+          backgroundColor: "black",
+          color: "#ebe0ce",
+          duration: 0.5,
+        });
+        gsap.to(".align-justify", { color: "black", duration: 0.5 });
+      } else {
+        gsap.to(".header", { backgroundColor: "transparent", duration: 0.5 });
+        gsap.to(".login-button", {
+          backgroundColor: "#ebe0ce",
+          color: "black",
+          duration: 0.5,
+        });
+        gsap.to(".align-justify", { color: "secondaryBg", duration: 0.5 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <>
-      <header className="w-full h-[80px] z-50 flex items-center flex-col fixed top-0 left-0">
+    <div>
+      <header className="header w-full h-[80px] z-50 flex items-center flex-col fixed top-0 left-0">
         <SnackBar />
         <div
           id="header-container "
@@ -45,13 +79,13 @@ const Header = () => {
           </span>
 
           <div className="flex items-center gap-2 h-full">
-            <Button className="rounded-2xl shadow-none bg-secondaryBg hover:bg-primaryBg text-black h-[34px]">
+            <Button className="login-button rounded-2xl shadow-none bg-secondaryBg hover:bg-primaryBg text-black h-[34px]">
               Log In
             </Button>
             {/* handbugger */}
             <Sheet>
               <SheetTrigger>
-                <AlignJustify className="text-secondaryBg" />
+                <AlignJustify className="align-justify text-secondaryBg" />
               </SheetTrigger>
               <SheetContent>
                 <div className="max-w-[865px] w-full flex flex-col items-center">
@@ -203,7 +237,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </>
+    </div>
   );
 };
 

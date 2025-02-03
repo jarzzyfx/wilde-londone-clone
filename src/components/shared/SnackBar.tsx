@@ -19,7 +19,7 @@ const SnackBar = ({}) => {
           <div className="flex h-full items-center gap-4">
             <Image src={"/cup.svg"} alt="cup svg" width={72} height={54} />
 
-            <p className="text-[1.375rem] leading-[1.58125rem] italic">
+            <p className="text-[1.375rem] leading-[1.58125rem] font-mediaanIt">
               20% off January Sale!{" "}
               <Link href={""} className="not-italic underline ml-2">
                 Book Now
